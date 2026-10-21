@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>РодничОК — детский центр в Щербинке</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3FAF8; --surface:#FFFFFF; --ink:#18302D; --muted:#4F6B67;
+  --teal:#0E6B66; --water:#CDEBE5; --sun:#F7C948; --coral:#E8684A; --on-coral:#fff; --line:#D5E7E3;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1F1D; --surface:#172B28; --ink:#E8F4F1; --muted:#9DBBB5; --teal:#5FCBC1; --water:#1E3B37; --sun:#F7C948; --coral:#F0795B; --on-coral:#1A0D09; --line:#27433F;}}
+:root[data-theme="dark"]{
+  --bg:#0F1F1D; --surface:#172B28; --ink:#E8F4F1; --muted:#9DBBB5; --teal:#5FCBC1; --water:#1E3B37; --sun:#F7C948; --coral:#F0795B; --on-coral:#1A0D09; --line:#27433F;}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:Fredoka,Nunito,system-ui,sans-serif;font-weight:600;line-height:1.15;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:clamp(26px,5vw,36px);margin-bottom:24px}
+
+.hero{position:relative;overflow:hidden;padding:48px 0 64px;background:var(--water)}
+.rings{position:absolute;right:-120px;top:-60px;width:520px;max-width:none;color:var(--teal);opacity:.22;pointer-events:none}
+.logo{font-family:Fredoka,sans-serif;font-weight:600;font-size:22px;color:var(--teal);margin-bottom:40px}
+.logo b{color:var(--coral);font-weight:600}
+.hero h1{font-size:clamp(34px,8vw,60px);max-width:14em;position:relative}
+.hero p.lead{max-width:34em;font-size:19px;color:var(--muted);margin:18px 0 28px;position:relative}
+.btns{display:flex;flex-wrap:wrap;gap:12px;position:relative}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 24px;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid var(--teal)}
+.btn.main{background:var(--coral);border-color:var(--coral);color:var(--on-coral)}
+.btn.alt{color:var(--teal);background:transparent}
+.badge{display:inline-flex;gap:8px;align-items:center;margin-top:28px;padding:8px 16px;background:var(--surface);border-radius:999px;font-weight:600;font-size:15px;position:relative}
+.badge i{font-style:normal;color:var(--sun);text-shadow:0 0 1px #b8860b}
+
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px}
+.card h3{font-size:22px;margin-bottom:8px}
+.card p{margin:0 0 16px;color:var(--muted);font-size:16px}
+.price{font-family:Fredoka,sans-serif;font-size:26px;color:var(--teal)}
+.price small{display:block;font:600 14px Nunito,sans-serif;color:var(--muted)}
+.card.big{grid-column:1/-1;border-left:8px solid var(--sun)}
+.rows{display:grid;gap:8px;margin:12px 0 0}
+.rows div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px dashed var(--line)}
+.rows b{font-family:Fredoka,sans-serif;font-weight:600;color:var(--teal);white-space:nowrap}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0;list-style:none}
+.chips li{background:var(--surface);border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-weight:600;font-size:16px}
+.chips li.hl{background:var(--teal);border-color:var(--teal);color:var(--bg)}
+
+.quote{background:var(--water);border-radius:26px;padding:28px;max-width:640px}
+.quote p{font-size:20px;margin:0 0 8px;font-weight:600}
+.quote span{color:var(--muted);font-size:15px}
+.stat{display:flex;flex-wrap:wrap;gap:12px 32px;margin-bottom:20px;color:var(--muted)}
+.stat strong{font-family:Fredoka,sans-serif;font-size:34px;color:var(--teal);margin-right:6px}
+
+.contact{background:var(--teal);color:#fff;border-radius:28px;padding:32px 24px}
+:root[data-theme="dark"] .contact,@media (prefers-color-scheme:dark){}
+.contact h2{margin-bottom:12px}
+.contact p{margin:4px 0}
+.contact .btn{border-color:#fff;color:#fff}
+.contact .btn.main{background:var(--sun);border-color:var(--sun);color:#18302D}
+.contact .btns{margin:20px 0}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .contact{background:#0E4D49}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <svg class="rings" viewBox="0 0 520 520" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+    <circle cx="260" cy="260" r="40"/><circle cx="260" cy="260" r="90"/><circle cx="260" cy="260" r="145"/><circle cx="260" cy="260" r="205"/><circle cx="260" cy="260" r="255"/>
+  </svg>
+  <div class="wrap">
+    <div class="logo">Родни<b>чОК</b></div>
+    <h1>Детский центр в Щербинке, куда ребёнок идёт с радостью</h1>
+    <p class="lead">Детский сад полного дня, группа кратковременного пребывания для малышей, занятия с логопедом и творческие студии. Всё рядом с домом.</p>
+    <div class="btns">
+      <a class="btn main" href="https://wa.me/79601660774">Записаться в WhatsApp</a>
+      <a class="btn alt" href="tel:+79936070774">Позвонить</a>
+    </div>
+    <div class="badge"><i>★</i> 5,0 на Яндекс Картах · 52 оценки · «Хорошее место 2026»</div>
+  </div>
+</header>
+
+<main>
+<section><div class="wrap">
+  <h2>Чем мы занимаемся</h2>
+  <div class="grid">
+    <div class="card big">
+      <h3>Детский сад полного дня</h3>
+      <p>Две группы, младшая и старшая. Ребёнок находится у нас до 12 часов в день.</p>
+      <div class="rows">
+        <div><span>Младшая группа, в месяц</span><b>41 000 ₽</b></div>
+        <div><span>Старшая группа, в месяц</span><b>43 000 ₽</b></div>
+        <div><span>Абонемент на 12 посещений</span><b>24 000 ₽</b></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Студия «Свободная мама»</h3>
+      <p>Малыш остаётся на 3,5 часа, с 9:00 до 12:30. Привыкает к садику, играет и занимается в маленькой подгруппе.</p>
+      <div class="price">1 000 ₽</div>
+    </div>
+    <div class="card">
+      <h3>Студия «Лего Мир»</h3>
+      <p>Групповые занятия по конструированию из разных видов конструкторов, с индивидуальным подходом к каждому.</p>
+      <div class="price">800 ₽</div>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Занятия для детей</h2>
+  <ul class="chips">
+    <li class="hl">Логопед</li><li class="hl">Мама и малыш</li><li class="hl">Группа раннего развития</li>
+    <li>Развитие речи</li><li>Развитие памяти</li><li>Нейрогимнастика</li><li>Логоритмика</li><li>Лепка</li>
+    <li>Рисование песком</li><li>Живопись</li><li>Чтение</li><li>Подготовка руки к письму</li><li>Каллиграфия</li><li>Окружающий мир</li><li>Лего</li>
+  </ul>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Что говорят родители</h2>
+  <div class="stat"><span><strong>5,0</strong>средняя оценка</span><span><strong>46</strong>отзывов</span></div>
+  <div class="quote">
+    <p>«Детям очень нравится там, и ходят с большим удовольствием.»</p>
+    <span>Наталья, отзыв на Яндекс Картах</span>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="contact">
+    <h2>Приходите знакомиться</h2>
+    <p>Москва, Щербинка, Любучанский переулок, 1к4</p>
+    <p>Работаем до 20:00 · есть парковка и Wi-Fi · доступно для колясок</p>
+    <div class="btns">
+      <a class="btn main" href="https://wa.me/79601660774">WhatsApp</a>
+      <a class="btn" href="https://t.me/rodnishokzentr">Telegram</a>
+      <a class="btn" href="https://vk.ru/dcrrodnichok">ВКонтакте</a>
+    </div>
+    <p>Телефон: <a href="tel:+79936070774">+7 (993) 607-07-74</a></p>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap">РодничОК, детский развивающий центр. Макет сайта.</div></footer>
+</body>
+</html>
